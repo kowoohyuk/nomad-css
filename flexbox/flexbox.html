@@ -1,23 +1,28 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Flexbox</title>
 <style>
+  /* flex-container는 자식만 flex-items로 바꾼다.
+    즉, father 밑의 box는 flex-item이 아니므로 수직정렬이 됨.
+    body {
+      display: flex;
+    }
+  */ 
+    .father {
+      display: flex;
+      justify-content: space-between;
+    }
     .box {
         width: 300px;
         height: 300px;
         background-color: blue;
         display: inline-block;
     }
-    .box:first-child {
-        margin-right: 22.717%;
-    }
-    .box:last-child {
-        margin-left: 22.717%;
-        border: 1px solid white;
-    }
 </style>
 </head>
 <body>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
+  <div class="father">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
 </body>
