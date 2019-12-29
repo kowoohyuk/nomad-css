@@ -4,13 +4,8 @@
   .father { /* <-- grid container */
     display: grid;
     grid-gap: 10px;
-    grid-auto-rows: 100px;  /*line-naming 공백을 넣으면 이름이 인식되지 않음. [first line]*/
-    grid-template-columns: [first-line] 1fr [second-line] 1fr [third-line] 1fr repeat(5, 1fr) [last-line];
-    /*
-       아래의 box first-child의 grid-column: third-line / last-line을 통해 공백이 2칸 발생한다.
-       공백 없이 grid를 가득 채우고 싶다면 dense를 추가하면 된다.
-    */
-    /* grid-auto-flow: row dense; */
+    grid-auto-rows: 100px; 
+    grid-template-columns: repeat(5, 1fr);
   }
   .box {
     display: flex;
@@ -25,9 +20,9 @@
     background-color: #3498db;
   }
   .box:first-child {
-    grid-column: first-line / last-line; /*line naming의 활용법. 하지만 이렇게 쓰기 보다 아래처럼 쓰는게 보기좋고 편하다.*/
-    grid-column: 1 / -1;
-    grid-column: third-line / last-line
+    /* 1 / 3보다 span 2로 설정하면 매우 간단하다.*/
+    grid-row: span 4;
+    grid-column: span 4;
   }
 </style>
 </head>
