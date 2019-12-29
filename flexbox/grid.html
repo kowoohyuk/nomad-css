@@ -1,35 +1,41 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>CSS Grid</title>
 <style>
-    .father { /* <-- grid container */
-      display: grid;
-      grid-template-columns: 300px 150px;
-      grid-template-rows: 300px 120px;
-      grid-gap: 5px;
-
-      /* grid도 flex direction과 비슷한 속성이 있다.
-        grid-auto-flow인데 이는 정한 갯수를 초과하는 자식 요소를 row로 배치할지, column으로 배치할지 지정한다.
-        기본 값은 row이기 때문에 설정을 안한 상태에서 grid-auto-column 속성을 추가해도 아무런 일이 발생하지 않는다.
-        일반적으로는 row만 사용하는데, 웹은 보통 위에서 밑으로 flow하기 때문이다.
-      */
-      grid-auto-flow: column;
-      grid-auto-columns: 60px;
-    }
-    .box {
-      background-color: #f1c40f;
-    }
+  .father { /* <-- grid container */
+    display: grid;
+    grid-auto-rows: 200px;
+    grid-gap: 5px;
+    /*grid-template-areas 유의사항
+      부모 요소의 areas에 지정한 명칭과 자식 요소의 grid-area 값은 일치하여야한다.
+    */
+    grid-template-areas: "header header header"
+                         "content content sidebar"
+                         "content content sidebar"
+                         "footer footer footer";
+  }
+  .first {
+    grid-area: header;
+    background-color: #f1c40f;
+  }
+  .second {
+    grid-area: sidebar;
+    background-color: #27ae60;
+  }
+  .third {
+    grid-area: footer;
+    background-color: #3498db;
+  }
+  .fourth {
+    grid-area: content;
+    background-color: #d35400;
+  }
 </style>
 </head>
 <body>
   <div class="father">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+    <div class="fourth"></div>
   </div>
 </body>
