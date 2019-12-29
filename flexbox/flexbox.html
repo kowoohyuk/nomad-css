@@ -3,14 +3,10 @@
 <style>
     .father {
       display: flex;
-      
-      /*flex-wrap은 flex-container가 작아질 때, flex-item에 준 width, height등의 값을 무시하거나 무시하지않도록 설정할 수 있다.
-        기본 설정 nowrap
-      */
       flex-wrap: wrap;
-
       justify-content: center;
       height: 100vh;
+      flex-direction: column;
     }
     .box {
       width: 300px;
@@ -21,6 +17,14 @@
       align-items: center;
       color: #fff;
       font-size: 50px;
+    }
+    .box:first-child {
+      /*flex-container가 아닌 flex-items의 속성으로
+        교차축(Cross Axis) 상 위치에 영향을 끼친다.
+        주축(Main Axis)과 교차축은 부모 태그의 flex-direction에 따라 변경된다.
+        기본인 row 상태에서 flex-end는 해당 요소를 하단에 위치하게 만들지만, column인 경우 우측에 위치하게 된다.
+      */
+      align-self: flex-end;
     }
 </style>
 </head>
