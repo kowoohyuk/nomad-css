@@ -5,28 +5,27 @@
     display: grid;
     grid-auto-rows: 200px;
     grid-gap: 5px;
-    /*grid-template-areas 유의사항
-      부모 요소의 areas에 지정한 명칭과 자식 요소의 grid-area 값은 일치하여야한다.
+
+    /*grid는 fr이라는 단위를 사용할 수 있다.
+      fr은 상대적인 범위를 차지하라는 뜻이다.
+      합이 6fr이고 요소 1이 1fr이면 25%의 너비를 차지함.
+      
+      grid-template-columns: 2fr 1fr 2fr 1fr;
     */
-    grid-template-areas: "header header header"
-                         "content content sidebar"
-                         "content content sidebar"
-                         "footer footer footer";
+
+    grid-template-columns: repeat(3, 1fr) 4fr; /* repeat를 통해 반복을 줄일 수도 있다. repeat(갯수, 크기)*/
+
   }
   .first {
-    grid-area: header;
     background-color: #f1c40f;
   }
   .second {
-    grid-area: sidebar;
     background-color: #27ae60;
   }
   .third {
-    grid-area: footer;
     background-color: #3498db;
   }
   .fourth {
-    grid-area: content;
     background-color: #d35400;
   }
 </style>
