@@ -1,36 +1,33 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Flexbox</title>
 <style>
-  /* flex-container는 자식만 flex-items로 바꾼다.
-    즉, father 밑의 box는 flex-item이 아니므로 수직정렬이 됨.
-    body {
-      display: flex;
-    }
-  */ 
     .father {
       display: flex;
       
-      /* 정렬은 width, height를 기준으로 한다.*/
-      justify-content: space-between;
-      align-items: center;
+      /*flex-wrap은 flex-container가 작아질 때, flex-item에 준 width, height등의 값을 무시하거나 무시하지않도록 설정할 수 있다.
+        기본 설정 nowrap
+      */
+      flex-wrap: wrap;
 
-      /* 정렬 축은 flex-direction을 통해 변경할 수 있다. 기본값은 row*/
-      flex-direction: column;
-      
+      justify-content: center;
       height: 100vh;
     }
     .box {
       width: 300px;
       height: 300px;
       background-color: blue;
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 50px;
     }
 </style>
 </head>
 <body>
   <div class="father">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
   </div>
 </body>
