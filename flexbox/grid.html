@@ -3,17 +3,10 @@
 <style>
   .father { /* <-- grid container */
     display: grid;
-    grid-auto-rows: 200px;
     grid-gap: 5px;
-
-    /*grid는 fr이라는 단위를 사용할 수 있다.
-      fr은 상대적인 범위를 차지하라는 뜻이다.
-      합이 6fr이고 요소 1이 1fr이면 25%의 너비를 차지함.
-      
-      grid-template-columns: 2fr 1fr 2fr 1fr;
-    */
-
-    grid-template-columns: repeat(3, 1fr) 4fr; /* repeat를 통해 반복을 줄일 수도 있다. repeat(갯수, 크기)*/
+    grid-auto-rows: 200px;
+    /* minmax(최소, 최대) , max(min)-content 줄바꿈 없이, 줄바꿈 하여 최대(최소) 너비로 설정*/
+    grid-template-columns: min-content repeat(3, 1fr);
 
   }
   .first {
@@ -32,7 +25,7 @@
 </head>
 <body>
   <div class="father">
-    <div class="first"></div>
+    <div class="first">aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa</div>
     <div class="second"></div>
     <div class="third"></div>
     <div class="fourth"></div>
