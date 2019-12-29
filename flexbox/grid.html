@@ -3,9 +3,17 @@
 <style>
     .father { /* <-- grid container */
       display: grid;
-      grid-template-rows: 30px 12px; /* row 요소의 갯수와 크기 */
-      grid-template-columns: 30px 50px; /* column 요소의 갯수와 크기 */
-      grid-gap: 10px; /* <-- grid 사이의 간격 */
+      grid-template-columns: 300px 150px;
+      grid-template-rows: 300px 120px;
+      grid-gap: 5px;
+
+      /* grid도 flex direction과 비슷한 속성이 있다.
+        grid-auto-flow인데 이는 정한 갯수를 초과하는 자식 요소를 row로 배치할지, column으로 배치할지 지정한다.
+        기본 값은 row이기 때문에 설정을 안한 상태에서 grid-auto-column 속성을 추가해도 아무런 일이 발생하지 않는다.
+        일반적으로는 row만 사용하는데, 웹은 보통 위에서 밑으로 flow하기 때문이다.
+      */
+      grid-auto-flow: column;
+      grid-auto-columns: 60px;
     }
     .box {
       background-color: #f1c40f;
@@ -14,6 +22,10 @@
 </head>
 <body>
   <div class="father">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
