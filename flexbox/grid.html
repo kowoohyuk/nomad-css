@@ -5,19 +5,16 @@
     display: grid;
     grid-gap: 10px;
     grid-auto-rows: 100px;
-
-    /* auto-fit : 가질 수 있는한 가장 많이 채워넣는 방식이다. minmax가 없을 경우 최소 크기는 300px?*/
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-
-    /* auto-fill : 기존의 레이아웃을 채워나가는 방식으로 ghost layout이 생긴다.
-                  공간을 미리 배정해둔 grid를 만들고, 해당되는 cell이 입력되는 방식이다.
+    grid-template-columns: repeat(5, 100px);
+    color: #fff;
+    /*align-content는 grid container를 이동시킨다는걸 다시 한 번 염두!
+      flex main, cross axis를 떠올리자.
     */
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    align-content: center;
 
-    /*
-      auto-fit : content를 stretch해서 browser를 꽉 채움
-      auto-fill : content를 최대한 모은다. 지금 가진 갯수와 관계없이 최대치까지
-    */
+    /*축약표현. place-content: align justify*/
+    place-content: center;
+    height: 100vh;
   }
   .box:nth-child(odd) {
     background-color: #34495e;
@@ -29,17 +26,10 @@
 </head>
 <body>
   <div class="father">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
   </div>
 </body>
