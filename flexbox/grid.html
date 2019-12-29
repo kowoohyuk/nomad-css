@@ -20,9 +20,8 @@
     background-color: #3498db;
   }
   .box:first-child {
-    /* 1 / 3보다 span 2로 설정하면 매우 간단하다.*/
-    grid-row: span 4;
-    grid-column: span 4;
+          /* row start / column start / row end / column end  or row / column */
+    grid-area: 2 / 1 / 4 / -1;
   }
 </style>
 </head>
