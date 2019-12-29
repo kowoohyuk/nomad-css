@@ -3,31 +3,43 @@
 <style>
   .father { /* <-- grid container */
     display: grid;
-    grid-gap: 5px;
-    grid-auto-rows: 200px;
-    /* minmax(최소, 최대) , max(min)-content 줄바꿈 없이, 줄바꿈 하여 최대(최소) 너비로 설정*/
-    grid-template-columns: min-content repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
 
+    /* auto-fit : 가질 수 있는한 가장 많이 채워넣는 방식이다. minmax가 없을 경우 최소 크기는 300px?*/
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+
+    /* auto-fill : 기존의 레이아웃을 채워나가는 방식으로 ghost layout이 생긴다.
+                  공간을 미리 배정해둔 grid를 만들고, 해당되는 cell이 입력되는 방식이다.
+    */
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+
+    /*
+      auto-fit : content를 stretch해서 browser를 꽉 채움
+      auto-fill : content를 최대한 모은다. 지금 가진 갯수와 관계없이 최대치까지
+    */
   }
-  .first {
-    background-color: #f1c40f;
+  .box:nth-child(odd) {
+    background-color: #34495e;
   }
-  .second {
-    background-color: #27ae60;
-  }
-  .third {
+  .box:nth-child(even) {
     background-color: #3498db;
-  }
-  .fourth {
-    background-color: #d35400;
   }
 </style>
 </head>
 <body>
   <div class="father">
-    <div class="first">aaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa</div>
-    <div class="second"></div>
-    <div class="third"></div>
-    <div class="fourth"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
   </div>
 </body>
