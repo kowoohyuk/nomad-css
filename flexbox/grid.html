@@ -1,0 +1,23 @@
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>CSS Grid</title>
+<style>
+    .father { /* <-- grid container */
+      display: grid;
+      grid-template-rows: 30px 12px; /* row 요소의 갯수와 크기 */
+      grid-template-columns: 30px 50px; /* column 요소의 갯수와 크기 */
+      grid-gap: 10px; /* <-- grid 사이의 간격 */
+    }
+    .box {
+      background-color: #f1c40f;
+    }
+</style>
+</head>
+<body>
+  <div class="father">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
