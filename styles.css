@@ -1,13 +1,7 @@
-:root {
-  --awsomeColor: #2980b9;
-}
+@custom-media --ipad-size (450px <= width < 850px);
 
-li:first-child a {
-  color: var(--awsomeColor);
-}
-
-@custom-selector :--headers h1, h2, h3, h4, h5, h6;
-
-:--headers {
-  color: #8e44ad;
+@media(--ipad-size) {
+  body {
+    background-color: red;
+  }
 }
