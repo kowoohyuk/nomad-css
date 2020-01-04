@@ -1,0 +1,10 @@
+*.tgz
+
+.yarn-integrity
+
+.env
+
+.next
+.DS_store
+.cache
+dist
