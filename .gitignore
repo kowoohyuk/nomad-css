@@ -7,4 +7,6 @@
 .next
 .DS_store
 .cache
-dist
+dist/
+
+node_modules/
