@@ -1,0 +1,29 @@
+{
+  "name": "nomad-css",
+  "version": "1.0.0",
+  "description": "CSS Masterclass course (Flexbox, Grid, PostCSS, CSSNext)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kowoohyuk/nomad-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kowoohyuk/nomad-css/issues"
+  },
+  "homepage": "https://github.com/kowoohyuk/nomad-css#readme",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "postcss-preset-env": "^6.7.0"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-preset-env": {
+        "stage": 0
+      }
+    }
+  }
+}
